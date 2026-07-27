@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segunda Época (2000–2020) — Antonio Minchón</title>
+  <meta name="description" content="Segunda época pictórica de Antonio Minchón: obra del período 2000 a 2020. Madurez expresiva, grandes formatos y series emblemáticas.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVEGACIÓN
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">Antonio <em>Minchón</em></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="primera-epoca.html">Primera Época</a></li>
+      <li><a href="segunda-epoca.html" class="active">Segunda Época</a></li>
+      <li><a href="tercera-epoca.html">Tercera Época</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO DE ÉPOCA
+  ═══════════════════════════════════════ -->
+  <header class="epoch-page-hero">
+    <div class="epoch-page-roman">II</div>
+    <p class="epoch-page-eyebrow">Antonio Minchón</p>
+    <h1 class="epoch-page-title">Segunda Época</h1>
+    <p class="epoch-page-years">2000 &mdash; 2020</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       GALERÍA
+  ═══════════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="gallery-meta fade-in">
+      <span class="gallery-count-label">Obras en esta época</span>
+      <span class="gallery-count-num" id="galleryCount"></span>
+    </div>
+    <div class="gallery-masonry" id="galleryGrid"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">&#10005;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">&#8592;</button>
+
+    <div class="lightbox-img-wrapper">
+      <img id="lbImg" src="" alt="">
+    </div>
+
+    <div class="lightbox-info">
+      <p class="lb-epoch">Segunda Época &middot; 2000–2020</p>
+      <h2 class="lb-title" id="lbTitle"></h2>
+      <div class="lb-details">
+        <div class="lb-row">
+          <span class="lb-label">Técnica</span>
+          <span class="lb-value" id="lbTech"></span>
+        </div>
+        <div class="lb-row">
+          <span class="lb-label">Año</span>
+          <span class="lb-value" id="lbYear"></span>
+        </div>
+        <div class="lb-row" id="lbDimsRow">
+          <span class="lb-label">Medidas</span>
+          <span class="lb-value" id="lbDims"></span>
+        </div>
+      </div>
+    </div>
+
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Siguiente">&#8594;</button>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FIRMA ARTISTA
+  ═══════════════════════════════════════ -->
+  <div class="artist-signature-wrap">
+    <h3 class="artist-signature-text">Antonio Minchón</h3>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <!-- Fila Superior: Enlaces Principales a Mayor Tamaño -->
+    <div class="footer-top-row">
+      <ul class="footer-main-links">
+        <li><a href="primera-epoca.html">Primera Época</a></li>
+        <li><a href="segunda-epoca.html">Segunda Época</a></li>
+        <li><a href="tercera-epoca.html">Tercera Época</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Línea divisoria interior -->
+    <hr class="footer-divider">
+
+    <!-- Fila Inferior: Logo, Políticas Legales y Copyright -->
+    <div class="footer-bottom-row">
+      <div class="footer-logo">Antonio Minchón <span style="font-size:0.75em;color:rgba(255,255,255,0.5);font-style:italic;letter-spacing:0.1em;">AMON</span></div>
+      <ul class="footer-legal-links">
+        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+        <li><a href="politica-cookies.html">Política de Cookies</a></li>
+      </ul>
+      <p class="footer-copy">Pintor · Huelva · 1986–2026</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script>
+    /* ─── Datos de las obras ─────────────────────────── */
+    const artworks = [
+      { file: '28. 2000. Interiores de objetos. Flor 1 .2-1.80m.JPG',            title: 'Interiores de objetos. Flor 1', tech: 'Óleo, lienzo',             year: '2000', featured: true  },
+      { file: '29.2000. Flor .2-1.60m.JPG',                                      title: 'Flor',                          tech: 'Óleo, lienzo',             year: '2000', featured: false },
+      { file: '30.2001. Circulo.     2-1.80m.JPG',                                title: 'Círculo',                       tech: 'Óleo, lienzo',             year: '2001', featured: false },
+      { file: '31.2002. Inter.  oleo-lienzo. 3-2m.JPG',                           title: 'Inter',                         tech: 'Óleo, lienzo',             year: '2002', featured: false },
+      { file: '32. c.2003.Lengua larga y mala.oleo-tela.2.70-2m.JPG',            title: 'Lengua larga y mala',           tech: 'Óleo, tela',               year: 'c. 2003', featured: true  },
+      { file: '33 . Los pencos.2004.oleo,lienzo. 3-2m.JPG',                      title: 'Los pencos',                    tech: 'Óleo, lienzo',             year: '2004', featured: false },
+      { file: '34.Escenario.2005.oleo,lienzo.3-2m.JPG',                          title: 'Escenario',                     tech: 'Óleo, lienzo',             year: '2005', featured: false },
+      { file: '35.Torrente.2006.oleo,lienzo.3-3m.JPG',                           title: 'Torrente',                      tech: 'Óleo, lienzo',             year: '2006', featured: false },
+      { file: '36.La partida.2008.oleo,lienzo.2-1.50m.JPG',                      title: 'La partida',                    tech: 'Óleo, lienzo',             year: '2008', featured: true  },
+      { file: '37.La partida. 2008oleo,lienzo.1.80-1.40m.PNG',                   title: 'La partida',                    tech: 'Óleo, lienzo',             year: '2008', featured: false },
+      { file: '38.Sombras.2009. oleo,lienzo..JPG',                               title: 'Sombras',                       tech: 'Óleo, lienzo',             year: '2009', featured: false },
+      { file: '39. Falico. 2010 .oleo,lienzo .2-1.50m.JPG',                      title: 'Fálico',                        tech: 'Óleo, lienzo',             year: '2010', featured: false },
+      { file: '40.Villa L. 2012t.mixta,lienzo.80-50cm.JPG',                      title: 'Villa L',                       tech: 'Técnica mixta, lienzo',    year: '2012', featured: false },
+      { file: '41. Melancolia.2013acuarela-papel.31.5-21.5cm.JPG',               title: 'Melancolía',                    tech: 'Acuarela, papel',          year: '2013', featured: false },
+      { file: '42. Dow. 2015. t,m,,papel. 31,5-21.5 cm.JPG',                     title: 'Dow',                           tech: 'Técnica mixta, papel',     year: '2015', featured: false },
+      { file: '43. Rosa.2016. oleo,lienzo.1.25-1m.JPG',                          title: 'Rosa',                          tech: 'Óleo, lienzo',             year: '2016', featured: false },
+      { file: '44. Melancolia. 2017 .t.m.,papel.30.5-21.5cm.JPG',               title: 'Melancolía',                    tech: 'Técnica mixta, papel',     year: '2017', featured: false },
+      { file: '45. autoretrato. 2018.. t,mixta,papel 31.5-21.5 cm.JPG',         title: 'Autorretrato',                  tech: 'Técnica mixta, papel',     year: '2018', featured: false },
+      { file: '46. Atractivo. 2018.oleo,lienzo  73-60cm.JPG',                    title: 'Atractivo',                     tech: 'Óleo, lienzo',             year: '2018', featured: false },
+      { file: '47.Bomarzo.2000.oleo,lienzo.103-8ocm.JPG',                        title: 'Bomarzo',                       tech: 'Óleo, lienzo',             year: '2000', featured: false },
+      { file: '48. A los amantes del arte.2000. 28-20.5cm.JPG',                  title: 'A los amantes del arte',        tech: 'Técnica mixta',            year: '2000', featured: false },
+      { file: '49. Alada.2000.oleo,lienzo 110-85..JPG',                          title: 'Alada',                         tech: 'Óleo, lienzo',             year: '2000', featured: false },
+      { file: '50. Alada.2000 t.mixta,lienzo .2-1m.JPG',                         title: 'Alada',                         tech: 'Técnica mixta, lienzo',    year: '2000', featured: false },
+      { file: '51. Apenas ser nada.2000.oleo,lienzo.2-1.50m.JPG',                title: 'Apenas ser nada',               tech: 'Óleo, lienzo',             year: '2000', featured: true  },
+      { file: '52. 2000. oleo,lienzo.  91-65cm.JPG',                             title: 'S.T.',                          tech: 'Óleo, lienzo',             year: '2000', featured: false },
+      { file: '53.Daena.2000-oleo,lienzo.2-1.80.PNG',                            title: 'Daena',                         tech: 'Óleo, lienzo',             year: '2000', featured: false },
+      { file: '54. Camerino. 2018oleo,lienzo. 1.7-1.5m.JPG',                    title: 'Camerino',                      tech: 'Óleo, lienzo',             year: '2018', featured: false },
+      { file: '55. Piensa un poco 2014..acuarela,papel. 30.5-21.5cm.JPG',        title: 'Piensa un poco',                tech: 'Acuarela, papel',          year: '2014', featured: false },
+      { file: '56. s.t. 2002.oleo,lienzo.1.50-1.25m.JPG',                       title: 'S.T.',                          tech: 'Óleo, lienzo',             year: '2002', featured: false },
+      { file: '57.Mandrake. c.2001. oleo,lienzo. 73-6ocm.JPG',                  title: 'Mandrake',                      tech: 'Óleo, lienzo',             year: 'c. 2001', featured: false },
+      { file: '58. Dialogo de acaros 2001. gouache,papel.51-30 cm.JPG',          title: 'Diálogo de ácaros',             tech: 'Gouache, papel',           year: '2001', featured: false },
+      { file: '59. John Cross.2018. gouache,papel. 110-81cm.JPG',                title: 'John Cross',                    tech: 'Gouache, papel',           year: '2018', featured: false },
+      { file: '60. Acaros. Contra mi. 2001. oleo,lienzo. 41-30cm.JPG',           title: 'Ácaros. Contra mí',             tech: 'Óleo, lienzo',             year: '2001', featured: false },
+      { file: '61. Acaros. Contra ti. 2001. oleo,lienzo.41-30cm.JPG',            title: 'Ácaros. Contra ti',             tech: 'Óleo, lienzo',             year: '2001', featured: false },
+    ];
+
+    /* ─── Utilidad ───────────────────────────────────── */
+    function enc(f) {
+      return f.replace(/ /g, '%20').replace(/\(/g, '%28').replace(/\)/g, '%29');
+    }
+
+    /* ─── Utilidad: extrae las medidas del nombre del archivo ─── */
+    function getDimensions(filename) {
+      const base = filename.substring(0, filename.lastIndexOf('.')).trim();
+      const match = base.match(/([0-9oO\.,]+\s*[-xX]\s*[0-9oO\.,]+\s*(?:cm|m|ocm)?|[0-9oO\.,]+\s*(?:cm|m|ocm))$/i);
+      if (!match) return '';
+      
+      let size = match[1].toLowerCase()
+        .replace(/o/g, '0') // corrige letra 'o' -> '0'
+        .replace(/,/g, '.') // corrige coma -> punto
+        .replace(/\s+/g, ''); // elimina espacios
+      
+      let unit = '';
+      if (size.endsWith('cm') || size.endsWith('ocm')) {
+        unit = ' cm';
+        size = size.replace('ocm', '').replace('cm', '');
+      } else if (size.endsWith('m')) {
+        unit = ' m';
+        size = size.replace('m', '');
+      } else {
+        const parts = size.split('-');
+        const val = parseFloat(parts[0]);
+        if (!isNaN(val) && val < 10) {
+          unit = ' m';
+        } else {
+          unit = ' cm';
+        }
+      }
+      
+      return size.replace('-', ' × ') + unit;
+    }
+
+    /* ─── Genera la galería ──────────────────────────── */
+    const grid = document.getElementById('galleryGrid');
+    document.getElementById('galleryCount').textContent = artworks.length;
+
+    artworks.forEach((art, i) => {
+      const item = document.createElement('div');
+      item.className = 'artwork-item fade-in';
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'Ver ' + art.title);
+      const dims = getDimensions(art.file);
+      item.innerHTML = `
+        <img src="${enc(art.file)}" alt="${art.title}, ${art.year}" loading="lazy">
+        <div class="artwork-caption" style="display: flex; justify-content: space-between; align-items: baseline; width: 100%; gap: 0.5rem; flex-wrap: nowrap;">
+          <div style="display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap;">
+            <p class="artwork-title">${art.title}</p>
+            <p class="artwork-year">${art.year}</p>
+          </div>
+          ${dims ? `<p class="artwork-dims" style="font-size: 0.78rem; color: var(--text-muted); font-family: system-ui, -apple-system, sans-serif; font-weight: 300; margin: 0; white-space: nowrap;">${dims}</p>` : ''}
+        </div>`;
+      item.addEventListener('click', () => openLightbox(i));
+      grid.appendChild(item);
+    });
+
+    /* ─── Lightbox ───────────────────────────────────── */
+    let currentIdx = 0;
+    const lb      = document.getElementById('lightbox');
+    const lbImg   = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbTech  = document.getElementById('lbTech');
+    const lbYear  = document.getElementById('lbYear');
+    const lbCtr   = document.getElementById('lbCounter');
+    const lbDimsRow = document.getElementById('lbDimsRow');
+    const lbDims    = document.getElementById('lbDims');
+
+    function openLightbox(idx) {
+      currentIdx = (idx + artworks.length) % artworks.length;
+      const a = artworks[currentIdx];
+      lbImg.src  = enc(a.file);
+      lbImg.alt  = a.title;
+      lbTitle.textContent = a.title;
+      lbTech.textContent  = a.tech;
+      lbYear.textContent  = a.year;
+      
+      const dims = getDimensions(a.file);
+      if (dims) {
+        lbDims.textContent = dims;
+        lbDimsRow.style.display = 'flex';
+      } else {
+        lbDimsRow.style.display = 'none';
+      }
+      
+      lbCtr.textContent   = (currentIdx + 1) + ' / ' + artworks.length;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => openLightbox(currentIdx - 1));
+    document.getElementById('lbNext').addEventListener('click', () => openLightbox(currentIdx + 1));
+
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  openLightbox(currentIdx - 1);
+      if (e.key === 'ArrowRight') openLightbox(currentIdx + 1);
+    });
+
+    /* ─── Nav scroll ─────────────────────────────────── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    /* ─── Mobile nav ─────────────────────────────────── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.innerHTML = navLinks.classList.contains('open') ? '&#10005;' : '&#9776;';
+    });
+
+    /* ─── Intersection Observer (fade-in) ────────────── */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

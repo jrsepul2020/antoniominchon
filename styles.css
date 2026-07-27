@@ -1,0 +1,1070 @@
+/* ============================================================
+   ANTONIO MINCHÓN — Portfolio Artístico
+   Tema: blanco / claro
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Cormorant+Infant:ital,wght@0,300;0,700;1,300;1,700&family=Syne:wght@700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:         #ffffff;
+  --bg-2:       #f6f4f0;
+  --bg-3:       #eeebe4;
+  --text:       #1c1a18;
+  --text-muted: #8a8278;
+  --gold:       #A60202;
+  --gold-light: #c23333;
+  --gold-dim:   rgba(166, 2, 2, 0.06);
+  --border:     rgba(0, 0, 0, 0.09);
+  --border-dark:rgba(0, 0, 0, 0.18);
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── Base ────────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ============================================================
+   NAVEGACIÓN
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 1.6rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background var(--transition), padding var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.9rem 3rem;
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.nav-logo em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.nav-logo:hover { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.75;
+  transition: opacity var(--transition), color var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+  opacity: 1;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-dark);
+  color: var(--text);
+  width: 40px; height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.nav-toggle:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ============================================================
+   HERO — PORTADA split (texto izquierda + cuadros derecha)
+   ============================================================ */
+.hero {
+  height: 800px;
+  max-height: 800px;
+  min-height: 800px;
+  padding-top: 4.5rem;
+  display: flex;
+  align-items: stretch;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* ── Columna izquierda (50%): Imagen ──────────────────────── */
+.hero-image-col {
+  flex: 0 0 50%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-2);
+  height: 100%;
+}
+
+.hero-image-col img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: 3rem;
+  transition: transform 0.8s ease;
+}
+
+.hero-image-col:hover img {
+  transform: scale(1.02);
+}
+
+/* ── Columna derecha (50%): Texto y Botones ────────────────── */
+.hero-text-col {
+  flex: 0 0 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 10% 4rem 8%;
+  background: #ffffff;
+  height: 100%;
+}
+
+.hero-title-group {
+  margin-bottom: 3.5rem;
+}
+
+.hero-minimal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.hero-minimal-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-top: 0.4rem;
+}
+
+/* Botones minimalistas */
+.hero-minimal-buttons {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.btn-minimal-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #A60202;
+  color: #A60202;
+  background: transparent;
+  padding: 0.9rem 2.2rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: background 0.4s, color 0.4s, border-color 0.4s;
+}
+
+.btn-minimal-red:hover {
+  background: #A60202;
+  color: #ffffff;
+}
+
+.btn-minimal-gray {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  background: transparent;
+  padding: 0.9rem 2.2rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: border-color 0.4s, color 0.4s;
+}
+
+.btn-minimal-gray:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* Responsive hero minimal */
+@media (max-width: 1024px) {
+  .hero {
+    height: auto;
+    max-height: none;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .hero-image-col {
+    flex: none;
+    width: 100%;
+    height: 500px;
+  }
+
+  .hero-image-col img {
+    padding: 2rem;
+  }
+
+  .hero-text-col {
+    flex: none;
+    width: 100%;
+    height: auto;
+    padding: 4rem 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-minimal-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-image-col {
+    height: 400px;
+  }
+
+  .hero-text-col {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-title-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-minimal-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .btn-minimal-red, .btn-minimal-gray {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   ARTISTA INTRO — entre hero y épocas
+   ============================================================ */
+.artist-intro {
+  padding: 5.5rem 3rem;
+  text-align: center;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.ai-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ai-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.ai-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.ai-amon {
+  display: inline-block;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.85em;
+  margin-left: 0.5rem;
+}
+
+.ai-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 1.5rem;
+  opacity: 0.5;
+}
+
+.ai-bio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 1.8rem;
+  font-weight: 300;
+}
+
+.ai-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.55;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   ÉPOCAS — CARDS HOME
+   ============================================================ */
+.epochs-section {
+  padding: 5rem 3% 9rem;
+  background: var(--bg);
+}
+
+.epochs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.epochs-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.epochs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Card de época */
+.epoch-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  cursor: pointer;
+  display: block;
+  background: var(--bg-3);
+}
+
+.epoch-card-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.epoch-card:hover .epoch-card-img { transform: scale(1.07); }
+
+.epoch-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 25%, rgba(0,0,0,0.88) 100%);
+  transition: background var(--transition);
+}
+
+.epoch-card:hover .epoch-card-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 15%, rgba(0,0,0,0.92) 100%);
+}
+
+.epoch-card-body {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 1.8rem;
+}
+
+.epoch-card-num {
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #e07070;
+  margin-bottom: 0.5rem;
+}
+
+.epoch-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-weight: 400;
+  color: #f2ece0;
+  line-height: 1.2;
+}
+
+.epoch-card-years {
+  font-size: 1.05rem;
+  color: rgba(242, 236, 224, 0.85);
+  letter-spacing: 0.12em;
+  margin-top: 0.4rem;
+}
+
+.epoch-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e07070;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.epoch-card-cta::after { content: '→'; transition: transform 0.3s ease; }
+.epoch-card:hover .epoch-card-cta { opacity: 1; transform: translateY(0); }
+.epoch-card:hover .epoch-card-cta::after { transform: translateX(4px); }
+
+/* ============================================================
+   HERO DE ÉPOCA — páginas interiores
+   ============================================================ */
+.epoch-page-hero {
+  min-height: 40vh;
+  padding: 11rem 3rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  position: relative;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.epoch-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center top, rgba(166,2,2,0.04) 0%, transparent 65%);
+}
+
+.epoch-page-roman {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(7rem, 18vw, 16rem);
+  font-weight: 400;
+  color: rgba(166, 2, 2, 0.06);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.epoch-page-eyebrow {
+  font-size: 0.66rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+  position: relative;
+}
+
+.epoch-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  position: relative;
+}
+
+.epoch-page-years {
+  font-size: 1.15rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  margin-top: 0.8rem;
+  position: relative;
+}
+
+/* ============================================================
+   GALERÍA — MASONRY
+   ============================================================ */
+.gallery-section {
+  padding: 3.5rem 2.5rem 8rem;
+  background: var(--bg);
+}
+
+.gallery-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 1600px;
+  margin: 0 auto 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.gallery-count-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.gallery-count-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+/* ── Masonry con CSS columns ─────────────────────────────── */
+.gallery-masonry {
+  columns: 4 240px;
+  column-gap: 1.2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Cada obra */
+.artwork-item {
+  break-inside: avoid;
+  margin-bottom: 1.4rem;
+  cursor: pointer;
+  display: block;
+}
+
+/* Imagen: ancho completo, altura natural (sin recorte) */
+.artwork-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.artwork-item:hover img {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px);
+}
+
+/* Pie de obra */
+.artwork-caption {
+  padding: 0.6rem 0 0;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.artwork-caption .artwork-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.artwork-caption .artwork-year {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(4, 4, 4, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 88vh;
+  min-width: 0;
+}
+
+.lightbox-img-wrapper img {
+  max-width: 100%;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.9);
+  transform: scale(0.96);
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.lightbox.open .lightbox-img-wrapper img { transform: scale(1); }
+
+/* Panel info */
+.lightbox-info {
+  width: 260px;
+  flex-shrink: 0;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+.lb-epoch {
+  font-size: 0.64rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #e07070;
+  margin-bottom: 1.5rem;
+}
+
+.lb-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #f2ece0;
+  line-height: 1.25;
+  font-style: italic;
+}
+
+.lb-details {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1rem;
+}
+
+.lb-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.lb-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(242,236,224,0.4);
+}
+
+.lb-value {
+  font-size: 0.82rem;
+  color: rgba(242,236,224,0.9);
+  line-height: 1.4;
+}
+
+/* Controles */
+.lb-close {
+  position: absolute;
+  top: 1.2rem; right: 1.5rem;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.5);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.lb-close:hover {
+  border-color: #c4985a;
+  color: #c4985a;
+  background: rgba(196,152,90,0.1);
+}
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.5);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.lb-prev { left: 1rem; }
+.lb-next { right: 1rem; }
+
+.lb-nav:hover {
+  border-color: #c4985a;
+  color: #c4985a;
+  background: rgba(196,152,90,0.1);
+}
+
+.lb-counter {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: #121212;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-top-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-main-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-main-links a {
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.3s;
+}
+
+.footer-main-links a:hover {
+  color: var(--gold);
+}
+
+.footer-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.footer-bottom-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.footer-logo span {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-legal-links a {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s;
+}
+
+.footer-legal-links a:hover {
+  color: var(--gold);
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ============================================================
+   SEPARADOR
+   ============================================================ */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ============================================================
+   ANIMACIONES
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1200px) {
+  .gallery-masonry { columns: 3 220px; }
+  .lightbox { padding: 1.5rem 3rem; }
+  .lightbox-info { width: 220px; }
+}
+
+@media (max-width: 900px) {
+  .epochs-grid { grid-template-columns: 1fr 1fr; }
+  .epochs-grid .epoch-card:last-child {
+    grid-column: span 2;
+    aspect-ratio: 16/7;
+  }
+
+  .gallery-masonry { columns: 2 200px; }
+
+  .lightbox {
+    flex-direction: column;
+    padding: 4.5rem 1rem 1.5rem;
+    gap: 1rem;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .lightbox-img-wrapper {
+    width: 100%;
+    max-height: 55vh;
+  }
+
+  .lightbox-info {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-left: 0;
+    padding-top: 1rem;
+  }
+
+  .lb-nav { display: none; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 1.2rem 1.5rem; }
+  .nav.scrolled { padding: 0.8rem 1.5rem; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    z-index: 250;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
+    color: var(--text);
+    opacity: 0.9;
+  }
+  .nav-toggle { display: flex; }
+
+  .hero-inner { padding: 2rem 1.5rem 0; }
+  .hero-caption { padding: 0.8rem 0 2rem; }
+
+  .intro-section { padding: 6rem 1.5rem 3.5rem; }
+  .epochs-section { padding: 4rem 3% 6rem; }
+
+  .epochs-grid { grid-template-columns: 1fr; }
+  .epochs-grid .epoch-card:last-child {
+    grid-column: span 1;
+    aspect-ratio: 2/3;
+  }
+
+  .epoch-page-hero { padding: 9rem 1.5rem 3rem; }
+
+  .gallery-section { padding: 2.5rem 1rem 6rem; }
+  .gallery-masonry { columns: 2 180px; column-gap: 0.8rem; }
+  .artwork-item { margin-bottom: 0.8rem; }
+
+  footer {
+    padding: 3rem 1.5rem 2rem;
+  }
+  .footer-main-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  .footer-legal-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-masonry { columns: 1; }
+  .intro-name { font-size: clamp(2.8rem, 14vw, 3.5rem); }
+}
+
+
+
+.artist-signature-wrap {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #121212;
+  padding: 5rem 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.artist-signature-text {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 7.5vw, 6rem);
+  color: #2a2a2a;
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 1.0;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  text-transform: uppercase;
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tercera Época (2020–2026) — Antonio Minchón</title>
+  <meta name="description" content="Tercera época pictórica de Antonio Minchón: obra del período 2020 a 2026. Obra reciente y actual del artista.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVEGACIÓN
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">Antonio <em>Minchón</em></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="primera-epoca.html">Primera Época</a></li>
+      <li><a href="segunda-epoca.html">Segunda Época</a></li>
+      <li><a href="tercera-epoca.html" class="active">Tercera Época</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO DE ÉPOCA
+  ═══════════════════════════════════════ -->
+  <header class="epoch-page-hero">
+    <div class="epoch-page-roman">III</div>
+    <p class="epoch-page-eyebrow">Antonio Minchón</p>
+    <h1 class="epoch-page-title">Tercera Época</h1>
+    <p class="epoch-page-years">2020 &mdash; 2026</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       GALERÍA
+  ═══════════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="gallery-meta fade-in">
+      <span class="gallery-count-label">Obras en esta época</span>
+      <span class="gallery-count-num" id="galleryCount"></span>
+    </div>
+    <div class="gallery-masonry" id="galleryGrid"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">&#10005;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">&#8592;</button>
+
+    <div class="lightbox-img-wrapper">
+      <img id="lbImg" src="" alt="">
+    </div>
+
+    <div class="lightbox-info">
+      <p class="lb-epoch">Tercera Época &middot; 2020–2026</p>
+      <h2 class="lb-title" id="lbTitle"></h2>
+      <div class="lb-details">
+        <div class="lb-row">
+          <span class="lb-label">Técnica</span>
+          <span class="lb-value" id="lbTech"></span>
+        </div>
+        <div class="lb-row">
+          <span class="lb-label">Año</span>
+          <span class="lb-value" id="lbYear"></span>
+        </div>
+        <div class="lb-row" id="lbDimsRow">
+          <span class="lb-label">Medidas</span>
+          <span class="lb-value" id="lbDims"></span>
+        </div>
+      </div>
+    </div>
+
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Siguiente">&#8594;</button>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FIRMA ARTISTA
+  ═══════════════════════════════════════ -->
+  <div class="artist-signature-wrap">
+    <h3 class="artist-signature-text">Antonio Minchón</h3>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <!-- Fila Superior: Enlaces Principales a Mayor Tamaño -->
+    <div class="footer-top-row">
+      <ul class="footer-main-links">
+        <li><a href="primera-epoca.html">Primera Época</a></li>
+        <li><a href="segunda-epoca.html">Segunda Época</a></li>
+        <li><a href="tercera-epoca.html">Tercera Época</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Línea divisoria interior -->
+    <hr class="footer-divider">
+
+    <!-- Fila Inferior: Logo, Políticas Legales y Copyright -->
+    <div class="footer-bottom-row">
+      <div class="footer-logo">Antonio Minchón <span style="font-size:0.75em;color:rgba(255,255,255,0.5);font-style:italic;letter-spacing:0.1em;">AMON</span></div>
+      <ul class="footer-legal-links">
+        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+        <li><a href="politica-cookies.html">Política de Cookies</a></li>
+      </ul>
+      <p class="footer-copy">Pintor · Huelva · 1986–2026</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script>
+    /* ─── Datos de las obras ─────────────────────────── */
+    const artworks = [
+      { file: '62   . 2020. Soñador. t.mixta,papel. 50cm.JPG',                         title: 'Soñador',                       tech: 'Técnica mixta, papel',      year: '2020', featured: false },
+      { file: '63.Peguerillas maravillas.2020.t.mixta,papel. 50cm.JPG',                title: 'Peguerillas maravillas',         tech: 'Técnica mixta, papel',      year: '2020', featured: false },
+      { file: '64. Cuaternidad.2021. oleo,lienzo. 81-65cm.JPG',                        title: 'Cuaternidad',                   tech: 'Óleo, lienzo',              year: '2021', featured: false },
+      { file: '65. La noche americana2022. oleo,lienzo.1.60-1.25m.JPG',               title: 'La noche americana',             tech: 'Óleo, lienzo',              year: '2022', featured: true  },
+      { file: '66.Desasimiento .2022. oleo,papel.1.25-1m.JPG',                        title: 'Desasimiento',                  tech: 'Óleo, papel',               year: '2022', featured: false },
+      { file: '67. Spica. 2024. oleo,papel.100-65.JPG',                               title: 'Spica',                         tech: 'Óleo, papel',               year: '2024', featured: false },
+      { file: '68. Ships passing in the night. 2024 .t.mixta,papel. 31.5-21.5.PNG',   title: 'Ships passing in the night',    tech: 'Técnica mixta, papel',      year: '2024', featured: false },
+      { file: '69. Pasodoble. 2024.oleo,lienzo.  2-2m.PNG',                           title: 'Pasodoble',                     tech: 'Óleo, lienzo',              year: '2024', featured: true  },
+      { file: '70. Chiringuito virtual1.2024. oleo,lienzo. 91-65cm.JPG',              title: 'Chiringuito virtual 1',         tech: 'Óleo, lienzo',              year: '2024', featured: false },
+      { file: '71. Chiringuito virtual 2. 2024. oleo,lienzo. 93-70cm.PNG',            title: 'Chiringuito virtual 2',         tech: 'Óleo, lienzo',              year: '2024', featured: false },
+      { file: '72. Ni alto ni tu. 2025. oleo,lienzo.  2.30-2m.PNG',                   title: 'Ni alto ni tú',                 tech: 'Óleo, lienzo',              year: '2025', featured: false },
+      { file: '73. Daena.2025. oleo,lienzo. 2-1.50m.JPG',                             title: 'Daena',                         tech: 'Óleo, lienzo',              year: '2025', featured: false },
+      { file: '74. A dark song. 2026. oleo,lienzo. 100-81.JPG',                       title: 'A dark song',                   tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '75. A luminous song. 2026. 83-61cm.PNG',                               title: 'A luminous song',               tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '76. The family.2026. oleo,lienzo. 81-60cm.PNG',                        title: 'The family',                    tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '77. After. 2026. oleo,lienzo.110-90cm.PNG',                            title: 'After',                         tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '78. Demiurgo. 2026.oleo,lienzo.   100-81cm.JPG',                       title: 'Demiurgo',                      tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '79. J R. kundalini. oleo,lienzo. 2026.  100-59.5cm.JPG',               title: 'J.R. Kundalini',                tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '80. La vuelta al mundo de un novelista. 2026. oleo,lienzo. 1.35-85cm.JPG', title: 'La vuelta al mundo de un novelista', tech: 'Óleo, lienzo',  year: '2026', featured: true  },
+      { file: '81.Persecucion en el paraiso.2026. oleo,lienzo. 2-1.80m.JPG',         title: 'Persecución en el paraíso',     tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '82.Pagoda.2025. oleo,lienzo. 1oo-81cm.JPG',                           title: 'Pagoda',                        tech: 'Óleo, lienzo',              year: '2025', featured: false },
+      { file: '83. El escondite de Jonas. 2026. oleo,lienzo.93-79cm.JPG',             title: 'El escondite de Jonás',         tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '84.Orfeo y Euridice. 2026. oleo,iridiscente,lienzo. 150-90cm.PNG',    title: 'Orfeo y Eurídice',              tech: 'Óleo, iridiscente, lienzo', year: '2026', featured: true  },
+      { file: '85. El circulo de fuego.2025. oleo,lienzo. 100-65cm.JPG',             title: 'El círculo de fuego',           tech: 'Óleo, lienzo',              year: '2025', featured: false },
+      { file: '86.Sirius Crown. 2025. oleo,lienzo. 2-1m.JPG',                        title: 'Sirius Crown',                  tech: 'Óleo, lienzo',              year: '2025', featured: false },
+      { file: '87. Revolu. 2025. 0leo,lienzo. 2.70-2m.JPG',                          title: 'Revolu',                        tech: 'Óleo, lienzo',              year: '2025', featured: false },
+      { file: '88. Abulafia.2025. oleo,lienzo. 3-2m.JPG',                            title: 'Abulafia',                      tech: 'Óleo, lienzo',              year: '2025', featured: true  },
+      { file: '89.La aparicion del atractivo. 2026. oleo,lienzo. 2.5-2m.PNG',        title: 'La aparición del atractivo',    tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '90.Chiringuito virtual(3). 2026. oleo,lienzo. 2.30-2m.JPG',           title: 'Chiringuito virtual (3)',        tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '91. Cucurrucucu. 2026. oleo,lienzo.1.75-1.55.JPG',                    title: 'Cucurrucucú',                   tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '92. Flaneur. 2026. oleo,lienzo .205-1.80m.JPG',                       title: 'Flâneur',                       tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '93. Doble negacion.2026. oleo,lienzo. 170-125cm.JPG',                 title: 'Doble negación',                tech: 'Óleo, lienzo',              year: '2026', featured: true  },
+      { file: '94. Pintura flor. 2026. oleo,lienzo. 185-125cm.PNG',                  title: 'Pintura flor',                  tech: 'Óleo, lienzo',              year: '2026', featured: false },
+      { file: '95. El vinoso Ponto, 2026, oleo,lienzo. 2,10-1.80m.JPG',              title: 'El vinoso Ponto',               tech: 'Óleo, lienzo',              year: '2026', featured: false },
+    ];
+
+    /* ─── Utilidad ───────────────────────────────────── */
+    function enc(f) {
+      return f.replace(/ /g, '%20').replace(/\(/g, '%28').replace(/\)/g, '%29');
+    }
+
+    /* ─── Utilidad: extrae las medidas del nombre del archivo ─── */
+    function getDimensions(filename) {
+      const base = filename.substring(0, filename.lastIndexOf('.')).trim();
+      const match = base.match(/([0-9oO\.,]+\s*[-xX]\s*[0-9oO\.,]+\s*(?:cm|m|ocm)?|[0-9oO\.,]+\s*(?:cm|m|ocm))$/i);
+      if (!match) return '';
+      
+      let size = match[1].toLowerCase()
+        .replace(/o/g, '0') // corrige letra 'o' -> '0'
+        .replace(/,/g, '.') // corrige coma -> punto
+        .replace(/\s+/g, ''); // elimina espacios
+      
+      let unit = '';
+      if (size.endsWith('cm') || size.endsWith('ocm')) {
+        unit = ' cm';
+        size = size.replace('ocm', '').replace('cm', '');
+      } else if (size.endsWith('m')) {
+        unit = ' m';
+        size = size.replace('m', '');
+      } else {
+        const parts = size.split('-');
+        const val = parseFloat(parts[0]);
+        if (!isNaN(val) && val < 10) {
+          unit = ' m';
+        } else {
+          unit = ' cm';
+        }
+      }
+      
+      return size.replace('-', ' × ') + unit;
+    }
+
+    /* ─── Genera la galería ──────────────────────────── */
+    const grid = document.getElementById('galleryGrid');
+    document.getElementById('galleryCount').textContent = artworks.length;
+
+    artworks.forEach((art, i) => {
+      const item = document.createElement('div');
+      item.className = 'artwork-item fade-in';
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'Ver ' + art.title);
+      const dims = getDimensions(art.file);
+      item.innerHTML = `
+        <img src="${enc(art.file)}" alt="${art.title}, ${art.year}" loading="lazy">
+        <div class="artwork-caption" style="display: flex; justify-content: space-between; align-items: baseline; width: 100%; gap: 0.5rem; flex-wrap: nowrap;">
+          <div style="display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap;">
+            <p class="artwork-title">${art.title}</p>
+            <p class="artwork-year">${art.year}</p>
+          </div>
+          ${dims ? `<p class="artwork-dims" style="font-size: 0.78rem; color: var(--text-muted); font-family: system-ui, -apple-system, sans-serif; font-weight: 300; margin: 0; white-space: nowrap;">${dims}</p>` : ''}
+         </div>`;
+      item.addEventListener('click', () => openLightbox(i));
+      grid.appendChild(item);
+    });
+
+    /* ─── Lightbox ───────────────────────────────────── */
+    let currentIdx = 0;
+    const lb      = document.getElementById('lightbox');
+    const lbImg   = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbTech  = document.getElementById('lbTech');
+    const lbYear  = document.getElementById('lbYear');
+    const lbCtr   = document.getElementById('lbCounter');
+    const lbDimsRow = document.getElementById('lbDimsRow');
+    const lbDims    = document.getElementById('lbDims');
+
+    function openLightbox(idx) {
+      currentIdx = (idx + artworks.length) % artworks.length;
+      const a = artworks[currentIdx];
+      lbImg.src  = enc(a.file);
+      lbImg.alt  = a.title;
+      lbTitle.textContent = a.title;
+      lbTech.textContent  = a.tech;
+      lbYear.textContent  = a.year;
+      
+      const dims = getDimensions(a.file);
+      if (dims) {
+        lbDims.textContent = dims;
+        lbDimsRow.style.display = 'flex';
+      } else {
+        lbDimsRow.style.display = 'none';
+      }
+      
+      lbCtr.textContent   = (currentIdx + 1) + ' / ' + artworks.length;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => openLightbox(currentIdx - 1));
+    document.getElementById('lbNext').addEventListener('click', () => openLightbox(currentIdx + 1));
+
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  openLightbox(currentIdx - 1);
+      if (e.key === 'ArrowRight') openLightbox(currentIdx + 1);
+    });
+
+    /* ─── Nav scroll ─────────────────────────────────── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    /* ─── Mobile nav ─────────────────────────────────── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.innerHTML = navLinks.classList.contains('open') ? '&#10005;' : '&#9776;';
+    });
+
+    /* ─── Intersection Observer (fade-in) ────────────── */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

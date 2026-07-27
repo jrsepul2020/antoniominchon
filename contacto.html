@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Antonio Minchón</title>
+  <meta name="description" content="Póngase en contacto con el pintor Antonio Minchón (AMON) en Huelva para adquirir obras o concertar visitas al estudio.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVEGACIÓN
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">Antonio <em>Minchón</em></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="primera-epoca.html">Primera Época</a></li>
+      <li><a href="segunda-epoca.html">Segunda Época</a></li>
+      <li><a href="tercera-epoca.html">Tercera Época</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO DE CONTACTO
+  ═══════════════════════════════════════ -->
+  <header class="epoch-page-hero" style="min-height: 35vh; padding-top: 10rem;">
+    <div class="epoch-page-roman" style="font-size: clamp(6rem, 14vw, 12rem); opacity: 0.05;">@</div>
+    <p class="epoch-page-eyebrow">Hablemos de arte</p>
+    <h1 class="epoch-page-title">Contacto</h1>
+    <p class="epoch-page-years">Huelva · España</p>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       SECCIÓN PRINCIPAL — DOS COLUMNAS
+  ═══════════════════════════════════════ -->
+  <section class="relative bg-white w-full py-16 md:py-24 px-6 sm:px-12 md:px-20 overflow-hidden">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-16 md:gap-24 relative">
+      
+      <!-- Columna Izquierda: Datos de contacto -->
+      <div class="flex-1 flex flex-col justify-start">
+        <h2 class="font-serif text-[#1c1a18] text-4xl sm:text-5xl font-normal leading-tight m-0 mb-6" style="font-family: 'Playfair Display', serif;">
+          Datos de contacto
+        </h2>
+        <p class="font-sans text-sm sm:text-base text-zinc-600 leading-relaxed m-0 mb-10" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 300;">
+          Si tiene interés en alguna de las obras expuestas en el portfolio, desea encargar un proyecto pictórico personalizado o quiere concertar una visita privada a mi estudio y taller de pintura en Huelva, no dude en escribirme o llamar. Estaré encantado de atenderle.
+        </p>
+
+        <!-- Bloque de Datos -->
+        <div class="flex flex-col gap-6 font-sans text-sm sm:text-base text-zinc-700" style="font-family: system-ui, -apple-system, sans-serif;">
+          
+          <div class="flex flex-col">
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Artista</span>
+            <span class="font-light text-zinc-900">Antonio Minchón Pintor</span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Estudio y Taller</span>
+            <span class="font-light text-zinc-900">Huelva, Andalucía, España</span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Teléfono</span>
+            <a href="tel:+34616923455" class="font-light text-zinc-900 hover:text-[#A60202] transition-colors duration-300 no-underline">+34 616 923 455</a>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Correo Electrónico</span>
+            <a href="mailto:aminchonamon@hotmail.com" class="font-light text-zinc-900 hover:text-[#A60202] transition-colors duration-300 no-underline">aminchonamon@hotmail.com</a>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Horario de atención</span>
+            <span class="font-light text-zinc-900">Lunes a Viernes de 10:00 a 14:00 (Visitas con cita previa)</span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Redes Sociales</span>
+            <div class="flex gap-4 mt-1 font-semibold uppercase text-xs tracking-widest" style="letter-spacing: 0.15em;">
+              <a href="https://instagram.com" target="_blank" class="text-zinc-500 hover:text-[#A60202] transition-colors duration-300 no-underline">Instagram</a>
+              <span class="text-zinc-300">·</span>
+              <a href="https://facebook.com" target="_blank" class="text-zinc-500 hover:text-[#A60202] transition-colors duration-300 no-underline">Facebook</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Formulario de contacto básico -->
+      <div class="flex-1 bg-zinc-50/50 p-8 sm:p-12 rounded-[24px] border border-solid border-zinc-100/80">
+        <h2 class="font-serif text-[#1c1a18] text-4xl sm:text-5xl font-normal leading-tight m-0 mb-8" style="font-family: 'Playfair Display', serif;">
+          Escríbame
+        </h2>
+        
+        <form action="#" method="POST" class="flex flex-col gap-8 w-full">
+          <!-- Campo Nombre -->
+          <div class="flex flex-col w-full">
+            <label for="name" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Nombre Completo</label>
+            <input 
+              type="text" 
+              name="name" 
+              id="name" 
+              required 
+              placeholder="Ej. Juan Pérez"
+              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300"
+              style="font-family: system-ui, -apple-system, sans-serif;"
+            >
+          </div>
+
+          <!-- Campo Email -->
+          <div class="flex flex-col w-full">
+            <label for="email" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Correo Electrónico</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              required 
+              placeholder="Ej. juan@correo.com"
+              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300"
+              style="font-family: system-ui, -apple-system, sans-serif;"
+            >
+          </div>
+
+          <!-- Campo Asunto -->
+          <div class="flex flex-col w-full">
+            <label for="subject" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Asunto</label>
+            <input 
+              type="text" 
+              name="subject" 
+              id="subject" 
+              required 
+              placeholder="Ej. Consulta sobre Vergüenza torera"
+              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300"
+              style="font-family: system-ui, -apple-system, sans-serif;"
+            >
+          </div>
+
+          <!-- Campo Mensaje -->
+          <div class="flex flex-col w-full">
+            <label for="message" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Mensaje</label>
+            <textarea 
+              name="message" 
+              id="message" 
+              rows="4" 
+              required 
+              placeholder="Escriba aquí los detalles de su consulta..."
+              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300 resize-none"
+              style="font-family: system-ui, -apple-system, sans-serif; line-height: 1.6;"
+            ></textarea>
+          </div>
+
+          <!-- Botón de Envío -->
+          <div class="mt-4">
+            <button 
+              type="submit" 
+              class="inline-flex items-center justify-center px-10 py-3.5 border border-solid border-zinc-900 bg-transparent text-zinc-950 hover:bg-zinc-950 hover:text-white transition-all duration-300 font-sans font-semibold text-[11px] tracking-widest uppercase cursor-pointer" 
+              style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;"
+            >
+              Enviar Mensaje
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FIRMA ARTISTA
+  ═══════════════════════════════════════ -->
+  <div class="artist-signature-wrap">
+    <h3 class="artist-signature-text">Antonio Minchón</h3>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <!-- Fila Superior: Enlaces Principales a Mayor Tamaño -->
+    <div class="footer-top-row">
+      <ul class="footer-main-links">
+        <li><a href="primera-epoca.html">Primera Época</a></li>
+        <li><a href="segunda-epoca.html">Segunda Época</a></li>
+        <li><a href="tercera-epoca.html">Tercera Época</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Línea divisoria interior -->
+    <hr class="footer-divider">
+
+    <!-- Fila Inferior: Logo, Políticas Legales y Copyright -->
+    <div class="footer-bottom-row">
+      <div class="footer-logo">Antonio Minchón <span style="font-size:0.75em;color:rgba(255,255,255,0.5);font-style:italic;letter-spacing:0.1em;">AMON</span></div>
+      <ul class="footer-legal-links">
+        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+        <li><a href="politica-cookies.html">Política de Cookies</a></li>
+      </ul>
+      <p class="footer-copy">Pintor · Huelva · 1986–2026</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script>
+    /* ─── Nav scroll ─────────────────────────────────── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ─── Mobile nav ─────────────────────────────────── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.innerHTML = navLinks.classList.contains('open') ? '&#10005;' : '&#9776;';
+    });
+  </script>
+
+</body>
+</html>
