@@ -6,6 +6,7 @@
   <title>Contacto — Antonio Minchón</title>
   <meta name="description" content="Póngase en contacto con el pintor Antonio Minchón (AMON) en Huelva para adquirir obras o concertar visitas al estudio.">
   <link rel="stylesheet" href="styles.css">
+  <script src="cookies.js" defer></script>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -51,12 +52,9 @@
       
       <!-- Columna Izquierda: Datos de contacto -->
       <div class="flex-1 flex flex-col justify-start">
-        <h2 class="font-serif text-[#1c1a18] text-4xl sm:text-5xl font-normal leading-tight m-0 mb-6" style="font-family: 'Playfair Display', serif;">
+        <h2 class="font-serif text-[#1c1a18] text-4xl sm:text-5xl font-normal leading-tight m-0 mb-8" style="font-family: 'Playfair Display', serif;">
           Datos de contacto
         </h2>
-        <p class="font-sans text-sm sm:text-base text-zinc-600 leading-relaxed m-0 mb-10" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 300;">
-          Si tiene interés en alguna de las obras expuestas en el portfolio, desea encargar un proyecto pictórico personalizado o quiere concertar una visita privada a mi estudio y taller de pintura en Huelva, no dude en escribirme o llamar. Estaré encantado de atenderle.
-        </p>
 
         <!-- Bloque de Datos -->
         <div class="flex flex-col gap-6 font-sans text-sm sm:text-base text-zinc-700" style="font-family: system-ui, -apple-system, sans-serif;">
@@ -90,8 +88,6 @@
             <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Redes Sociales</span>
             <div class="flex gap-4 mt-1 font-semibold uppercase text-xs tracking-widest" style="letter-spacing: 0.15em;">
               <a href="https://instagram.com" target="_blank" class="text-zinc-500 hover:text-[#A60202] transition-colors duration-300 no-underline">Instagram</a>
-              <span class="text-zinc-300">·</span>
-              <a href="https://facebook.com" target="_blank" class="text-zinc-500 hover:text-[#A60202] transition-colors duration-300 no-underline">Facebook</a>
             </div>
           </div>
 
@@ -161,8 +157,22 @@
             ></textarea>
           </div>
 
+          <!-- Casilla de Aceptación Política de Privacidad -->
+          <div class="flex items-start gap-3 mt-1">
+            <input 
+              type="checkbox" 
+              name="privacy_policy" 
+              id="privacy_policy" 
+              required 
+              class="mt-1 accent-[#A60202] w-4 h-4 rounded border-zinc-300 cursor-pointer"
+            >
+            <label for="privacy_policy" class="text-xs text-zinc-600 font-sans leading-normal cursor-pointer select-none" style="font-family: system-ui, -apple-system, sans-serif;">
+              He leído y acepto la <a href="politica-privacidad.html" target="_blank" class="underline text-zinc-900 hover:text-[#A60202] transition-colors">Política de Privacidad</a>.
+            </label>
+          </div>
+
           <!-- Botón de Envío -->
-          <div class="mt-4">
+          <div class="mt-2">
             <button 
               type="submit" 
               class="inline-flex items-center justify-center px-10 py-3.5 border border-solid border-zinc-900 bg-transparent text-zinc-950 hover:bg-zinc-950 hover:text-white transition-all duration-300 font-sans font-semibold text-[11px] tracking-widest uppercase cursor-pointer" 
