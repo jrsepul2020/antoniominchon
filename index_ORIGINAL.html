@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonio Minchón — AMON · Pintor · Huelva</title>
+  <meta name="description" content="Portfolio de obra pictórica de Antonio Minchón (AMON), pintor de Huelva. Tres épocas de pintura: 1986–2000, 2000–2020 y 2020–2026.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVEGACIÓN
+  ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">Antonio <em>Minchón</em></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="primera-epoca.html">Primera Época</a></li>
+      <li><a href="segunda-epoca.html">Segunda Época</a></li>
+      <li><a href="tercera-epoca.html">Tercera Época</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  <section class="relative bg-white w-full pt-[125px] md:pt-[160px] pb-16 md:pb-24 px-6 sm:px-12 md:px-20 overflow-hidden" id="hero">
+
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 relative">
+      
+      <!-- Columna Izquierda: Textos y Botón -->
+      <div class="relative flex-1 flex flex-col items-start z-10 w-full min-h-[300px] justify-center">
+
+        <!-- Contenido principal -->
+        <div class="relative z-10 flex flex-col items-start max-w-[540px]">
+          <h1 class="font-serif leading-none tracking-tight m-0 mb-6" style="font-family: 'Playfair Display', serif;">
+            <span class="block text-[#1c1a18] text-6xl sm:text-7xl md:text-[5.5rem] font-normal">Antonio</span>
+            <span class="block text-[#A60202] text-7xl sm:text-8xl md:text-[6.5rem] font-normal mt-1">Minchón</span>
+          </h1>
+          
+          <p class="font-sans text-xs tracking-widest uppercase text-zinc-500 font-semibold m-0 mb-6" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.2em;">
+            Pintor de Huelva <span class="text-[#A60202] ml-2 font-bold">|</span> Desde 1986
+          </p>
+
+          <!-- Texto Descriptivo / Declaración Artística -->
+          <p class="font-sans text-sm sm:text-base text-zinc-600 leading-relaxed m-0 mb-8" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 300; letter-spacing: 0.01em;">
+            La obra de Antonio Minchón (AMON) se define por la intensidad cromática y una profunda experimentación con la materia. Desde su estudio en Huelva, el pintor ha trazado una trayectoria que transita entre el gesto expresionista visceral y la mitología clásica, convirtiendo cada lienzo en un diálogo de luz, volumen y textura.
+          </p>
+
+          <!-- Botón y Redes en horizontal -->
+          <div class="flex flex-row items-center gap-6 sm:gap-8 flex-wrap w-full">
+            <a href="#epochs" class="inline-flex items-center justify-center px-8 py-3 border border-solid border-zinc-900 rounded-full text-zinc-950 font-sans font-semibold text-[11px] tracking-widest hover:bg-zinc-950 hover:text-white transition-all duration-300 no-underline uppercase" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">
+              Explorar Obra
+            </a>
+            
+            <div class="flex items-center gap-4 font-sans text-[11px] tracking-widest uppercase text-zinc-400 font-medium" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">
+              <a href="https://instagram.com" target="_blank" class="text-zinc-500 hover:text-[#A60202] transition-colors duration-300 no-underline">Instagram</a>
+              <span>·</span>
+              <a href="mailto:aminchonamon@hotmail.com" class="text-zinc-500 hover:text-[#A60202] transition-colors duration-300 no-underline">Email</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Columna Derecha: Imagen vertical con esquinas redondeadas y texto integrado -->
+      <div class="flex-1 w-full max-w-[480px] md:max-w-none flex justify-center">
+        <div class="relative w-full aspect-[3/4] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-sm bg-zinc-200">
+          <img
+            src="14.Verguenza%20torera.1986.%20oleo,seda.2.25-1.85m.JPG"
+            alt="Vergüenza torera — Antonio Minchón"
+            class="w-full h-full object-cover"
+          >
+          <!-- Texto del cuadro centrado en la parte inferior -->
+          <div class="absolute bottom-6 left-0 right-0 text-center z-10 pointer-events-none">
+            <p class="text-white font-sans font-bold text-sm sm:text-base md:text-lg tracking-wide m-0 drop-shadow-md" style="font-family: system-ui, -apple-system, sans-serif;">
+              Vergüenza torera - 1986
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       LAS TRES ÉPOCAS
+   ═══════════════════════════════════════ -->
+  <section class="epochs-section" id="epochs">
+    <div class="epochs-header-new fade-in px-[3%] mb-12 flex flex-col items-start text-left">
+      <!-- Tag / Línea superior: "— Las tres épocas" -->
+      <div class="flex items-center gap-4 mb-4 font-sans text-xs tracking-[0.25em] uppercase text-[#A60202] font-semibold" style="font-family: system-ui, -apple-system, sans-serif;">
+        <span class="w-12 h-[1px] bg-[#A60202]"></span>
+        <span>Trayectoria</span>
+      </div>
+
+      <!-- Título: "Las tres épocas" -->
+      <h2 class="font-serif leading-none tracking-tight m-0 mb-6 text-[#1c1a18] text-5xl sm:text-6xl md:text-7xl font-normal" style="font-family: 'Playfair Display', serif;">
+        Las tres épocas
+      </h2>
+
+      <!-- Texto descriptivo -->
+      <p class="font-sans text-sm sm:text-base text-zinc-500 leading-relaxed m-0 max-w-[650px]" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 300;">
+        Un recorrido retrospectivo a través de cuatro décadas de exploración pictórica. Desde el expresionismo visceral de los inicios hasta la madurez matérica y mitológica contemporánea, la obra de AMON se articula en tres períodos fundamentales de evolución artística.
+      </p>
+      
+      <!-- Línea divisoria sutil -->
+      <div class="w-full h-[1px] bg-zinc-200/80 mt-12 mb-6"></div>
+    </div>
+    <div class="epochs-grid">
+
+      <!-- PRIMERA ÉPOCA -->
+      <a href="primera-epoca.html" class="epoch-card fade-in">
+        <img
+          class="epoch-card-img"
+          src="19.%20%204%20%20.1990.%20oleo,pigmentos,lienzo.%203-2m.JPG"
+          alt="Estudio 4, óleo, pigmentos, lienzo, 1990"
+        >
+        <div class="epoch-card-overlay"></div>
+        <div class="epoch-card-body">
+          <p class="epoch-card-num">I</p>
+          <h2 class="epoch-card-title">Primera<br>Época</h2>
+          <p class="epoch-card-years">1986 — 2000</p>
+          <span class="epoch-card-cta">Explorar la época</span>
+        </div>
+      </a>
+
+      <!-- SEGUNDA ÉPOCA -->
+      <a href="segunda-epoca.html" class="epoch-card fade-in">
+        <img
+          class="epoch-card-img"
+          src="34.Escenario.2005.oleo,lienzo.3-2m.JPG"
+          alt="Escenario, 2005"
+        >
+        <div class="epoch-card-overlay"></div>
+        <div class="epoch-card-body">
+          <p class="epoch-card-num">II</p>
+          <h2 class="epoch-card-title">Segunda<br>Época</h2>
+          <p class="epoch-card-years">2000 — 2020</p>
+          <span class="epoch-card-cta">Explorar la época</span>
+        </div>
+      </a>
+
+      <!-- TERCERA ÉPOCA -->
+      <a href="tercera-epoca.html" class="epoch-card fade-in">
+        <img
+          class="epoch-card-img"
+          src="84.Orfeo%20y%20Euridice.%202026.%20oleo,iridiscente,lienzo.%20150-90cm.PNG"
+          alt="Orfeo y Eurídice, 2026"
+        >
+        <div class="epoch-card-overlay"></div>
+        <div class="epoch-card-body">
+          <p class="epoch-card-num">III</p>
+          <h2 class="epoch-card-title">Tercera<br>Época</h2>
+          <p class="epoch-card-years">2020 — 2026</p>
+          <span class="epoch-card-cta">Explorar la época</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FIRMA ARTISTA
+  ═══════════════════════════════════════ -->
+  <div class="artist-signature-wrap">
+    <h3 class="artist-signature-text">Antonio Minchón</h3>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <!-- Fila Superior: Enlaces Principales a Mayor Tamaño -->
+    <div class="footer-top-row">
+      <ul class="footer-main-links">
+        <li><a href="primera-epoca.html">Primera Época</a></li>
+        <li><a href="segunda-epoca.html">Segunda Época</a></li>
+        <li><a href="tercera-epoca.html">Tercera Época</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Línea divisoria interior -->
+    <hr class="footer-divider">
+
+    <!-- Fila Inferior: Logo, Políticas Legales y Copyright -->
+    <div class="footer-bottom-row">
+      <a href="index.html" class="footer-logo">Antonio Minchón <span style="font-size:0.55em;color:rgba(255,255,255,0.5);font-style:italic;letter-spacing:0.1em;">AMON</span></a>
+      <ul class="footer-legal-links">
+        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+        <li><a href="politica-cookies.html">Política de Cookies</a></li>
+      </ul>
+      <p class="footer-copy">Pintor · Huelva · 1986–2026</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 15);
+    });
+
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.innerHTML = navLinks.classList.contains('open') ? '&#10005;' : '&#9776;';
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.innerHTML = '&#9776;';
+      });
+    });
+
+
+
+    // Intersection Observer — fade-in
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
