@@ -397,7 +397,7 @@ img { display: block; max-width: 100%; }
    ÉPOCAS — CARDS HOME
    ============================================================ */
 .epochs-section {
-  padding: 5rem 3% 9rem;
+  padding: 5rem 3% 3rem;
   background: var(--bg);
 }
 
