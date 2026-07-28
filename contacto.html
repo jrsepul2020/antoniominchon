@@ -51,108 +51,108 @@
     <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-16 md:gap-24 relative">
       
       <!-- Columna Izquierda: Datos de contacto -->
-      <div class="flex-1 flex flex-col justify-start">
+      <div class="flex-1 flex flex-col justify-start pt-8 sm:pt-12">
         <h2 class="font-serif text-[#1c1a18] text-4xl sm:text-5xl font-normal leading-tight m-0 mb-8" style="font-family: 'Playfair Display', serif;">
           Datos de contacto
         </h2>
 
         <!-- Bloque de Datos -->
-        <div class="flex flex-col gap-6 font-sans text-sm sm:text-base text-zinc-700" style="font-family: system-ui, -apple-system, sans-serif;">
+        <div class="flex flex-col gap-7 font-sans" style="font-family: system-ui, -apple-system, sans-serif;">
           
           <div class="flex flex-col">
             <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Artista</span>
-            <span class="font-light text-zinc-900">Antonio Minchón Pintor</span>
+            <span class="font-bold text-zinc-950 text-base sm:text-lg">Antonio Minchón Pintor</span>
           </div>
 
           <div class="flex flex-col">
             <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Estudio y Taller</span>
-            <span class="font-light text-zinc-900">Huelva, Andalucía, España</span>
+            <span class="font-bold text-zinc-950 text-base sm:text-lg">Huelva, Andalucía, España</span>
           </div>
 
           <div class="flex flex-col">
             <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Teléfono</span>
-            <a href="tel:+34616923455" class="font-light text-zinc-900 hover:text-[#A60202] transition-colors duration-300 no-underline">+34 616 923 455</a>
+            <a href="tel:+34616923455" class="font-bold text-zinc-950 text-base sm:text-lg hover:text-[#A60202] transition-colors duration-300 no-underline">+34 616 923 455</a>
           </div>
 
           <div class="flex flex-col">
             <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Correo Electrónico</span>
-            <a href="mailto:aminchonamon@hotmail.com" class="font-light text-zinc-900 hover:text-[#A60202] transition-colors duration-300 no-underline">aminchonamon@hotmail.com</a>
+            <a href="mailto:aminchonamon@hotmail.com" class="font-bold text-zinc-950 text-base sm:text-lg hover:text-[#A60202] transition-colors duration-300 no-underline">aminchonamon@hotmail.com</a>
           </div>
 
           <div class="flex flex-col">
             <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Horario de atención</span>
-            <span class="font-light text-zinc-900">Lunes a Viernes de 10:00 a 14:00 (Visitas con cita previa)</span>
+            <span class="font-bold text-zinc-950 text-base sm:text-lg">Lunes a Viernes de 10:00 a 14:00 (Visitas con cita previa)</span>
           </div>
 
           <div class="flex flex-col">
             <span class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="letter-spacing: 0.15em;">Redes Sociales</span>
-            <div class="flex gap-4 mt-1 font-semibold uppercase text-xs tracking-widest" style="letter-spacing: 0.15em;">
-              <a href="https://instagram.com" target="_blank" class="text-zinc-500 hover:text-[#A60202] transition-colors duration-300 no-underline">Instagram</a>
+            <div class="flex gap-4 mt-1">
+              <a href="https://instagram.com" target="_blank" class="font-bold text-base sm:text-lg text-zinc-800 hover:text-[#A60202] transition-colors duration-300 no-underline">Instagram</a>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Columna Derecha: Formulario de contacto básico -->
-      <div class="flex-1 bg-zinc-50/50 p-8 sm:p-12 rounded-[24px] border border-solid border-zinc-100/80">
+      <!-- Columna Derecha: Formulario de contacto -->
+      <div class="flex-1 bg-zinc-50 p-8 sm:p-12 rounded-[24px] border border-solid border-zinc-200/90 shadow-xl shadow-zinc-200/50">
         <h2 class="font-serif text-[#1c1a18] text-4xl sm:text-5xl font-normal leading-tight m-0 mb-8" style="font-family: 'Playfair Display', serif;">
           Escríbame
         </h2>
         
-        <form action="#" method="POST" class="flex flex-col gap-8 w-full">
+        <form action="#" method="POST" class="flex flex-col gap-6 w-full">
           <!-- Campo Nombre -->
           <div class="flex flex-col w-full">
-            <label for="name" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Nombre Completo</label>
+            <label for="name" class="text-[11px] uppercase tracking-widest text-zinc-500 font-semibold mb-2" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.15em;">Nombre Completo</label>
             <input 
               type="text" 
               name="name" 
               id="name" 
               required 
               placeholder="Ej. Juan Pérez"
-              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300"
+              class="w-full bg-white border border-solid border-zinc-300 rounded-xl px-4 py-3.5 text-sm text-zinc-900 font-sans shadow-sm focus:border-[#A60202] focus:ring-2 focus:ring-[#A60202]/10 outline-none transition-all duration-200"
               style="font-family: system-ui, -apple-system, sans-serif;"
             >
           </div>
 
           <!-- Campo Email -->
           <div class="flex flex-col w-full">
-            <label for="email" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Correo Electrónico</label>
+            <label for="email" class="text-[11px] uppercase tracking-widest text-zinc-500 font-semibold mb-2" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.15em;">Correo Electrónico</label>
             <input 
               type="email" 
               name="email" 
               id="email" 
               required 
               placeholder="Ej. juan@correo.com"
-              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300"
+              class="w-full bg-white border border-solid border-zinc-300 rounded-xl px-4 py-3.5 text-sm text-zinc-900 font-sans shadow-sm focus:border-[#A60202] focus:ring-2 focus:ring-[#A60202]/10 outline-none transition-all duration-200"
               style="font-family: system-ui, -apple-system, sans-serif;"
             >
           </div>
 
           <!-- Campo Asunto -->
           <div class="flex flex-col w-full">
-            <label for="subject" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Asunto</label>
+            <label for="subject" class="text-[11px] uppercase tracking-widest text-zinc-500 font-semibold mb-2" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.15em;">Asunto</label>
             <input 
               type="text" 
               name="subject" 
               id="subject" 
               required 
               placeholder="Ej. Consulta sobre Vergüenza torera"
-              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300"
+              class="w-full bg-white border border-solid border-zinc-300 rounded-xl px-4 py-3.5 text-sm text-zinc-900 font-sans shadow-sm focus:border-[#A60202] focus:ring-2 focus:ring-[#A60202]/10 outline-none transition-all duration-200"
               style="font-family: system-ui, -apple-system, sans-serif;"
             >
           </div>
 
           <!-- Campo Mensaje -->
           <div class="flex flex-col w-full">
-            <label for="message" class="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold mb-1" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;">Mensaje</label>
+            <label for="message" class="text-[11px] uppercase tracking-widest text-zinc-500 font-semibold mb-2" style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.15em;">Mensaje</label>
             <textarea 
               name="message" 
               id="message" 
               rows="4" 
               required 
               placeholder="Escriba aquí los detalles de su consulta..."
-              class="w-full bg-transparent border-0 border-b border-solid border-zinc-200 focus:border-[#A60202] outline-none py-2 text-sm text-zinc-800 font-sans transition-colors duration-300 resize-none"
+              class="w-full bg-white border border-solid border-zinc-300 rounded-xl px-4 py-3.5 text-sm text-zinc-900 font-sans shadow-sm focus:border-[#A60202] focus:ring-2 focus:ring-[#A60202]/10 outline-none transition-all duration-200 resize-none"
               style="font-family: system-ui, -apple-system, sans-serif; line-height: 1.6;"
             ></textarea>
           </div>
@@ -172,10 +172,10 @@
           </div>
 
           <!-- Botón de Envío -->
-          <div class="mt-2">
+          <div class="mt-3 w-full">
             <button 
               type="submit" 
-              class="inline-flex items-center justify-center px-10 py-3.5 border border-solid border-zinc-900 bg-transparent text-zinc-950 hover:bg-zinc-950 hover:text-white transition-all duration-300 font-sans font-semibold text-[11px] tracking-widest uppercase cursor-pointer" 
+              class="w-full inline-flex items-center justify-center px-8 py-4 border-0 rounded-xl bg-[#A60202] text-white hover:bg-[#880202] transition-all duration-300 font-sans font-bold text-xs tracking-widest uppercase cursor-pointer shadow-md hover:shadow-lg" 
               style="font-family: system-ui, -apple-system, sans-serif; letter-spacing: 0.18em;"
             >
               Enviar Mensaje
