@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web en Pausa</title>
+
+  <style>
+    /* Fondo animado premium */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background: linear-gradient(120deg, #0f0f0f, #1a1a1a, #111, #1e1e1e);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Tarjeta glass premium */
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 50px 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 60px rgba(0,0,0,0.45);
+      text-align: center;
+      max-width: 480px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    /* Botón premium */
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background: #00c853;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+    }
+
+    .btn:hover {
+      background: #00e676;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 26px rgba(0, 230, 118, 0.55);
+    }
+
+    .phone {
+      margin-top: 25px;
+      font-size: 1rem;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2>PINTOR ANTONIO MINCHÓN</h2>
+    <h1>WEB EN PAUSA TECNICA TEMPORALMENTE</h1>
+
+    <p>
+      Si desea verla, solicite de nuevo el acceso al administrador:<br>
+      <strong>[644 96 42 57](tel:644964257)</strong>
+    </p>
+
+    <a class="btn" href="https://wa.me/34644964257?text=Hola,%20quiero%20reactivar%20mi%20web">
+      Quiero reactivar mi web
+    </a>
+
+    <div class="phone">
+      Contacto directo: [644 96 42 57](tel:644964257)
+    </div>
+  </div>
+
+</body>
+</html>
